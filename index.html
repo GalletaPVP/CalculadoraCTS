@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-5">
+                <form action="" method="POST">
+                    <div class="card mt-3">
+                        <div class="card-header bg-primary text-white text-center">
+                            <h3>Calculadora de CTS</h3>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="text-center mb-3">Tiempo computable</h5>
+                            <div class="form-group">
+                                <label for="fecha_inicial" class="form-label">Seleccione la fecha inicial</label>
+                                <input type="date" id="fecha_inicial" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_final" class="form-label">Seleccione la fecha final</label>
+                                <input type="date" id="fecha_final" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="renumeracion_basica" class="form-label">Ingrese la renumeración
+                                    básica</label>
+                                <input type="text" value="0" id="renumeracion_basica" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="asignacion_familiar" class="form-label">Ingrese la asignación
+                                    familiar</label>
+                                <input type="text" value="0" id="asignacion_familiar" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="gratificacion" class="form-label">Ingrese la gratificación</label>
+                                <input type="text" value="0" id="gratificacion" class="form-control">
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#ventana1">+</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana2"
+                                id="calcular">Calcular</button>
+                            <button type="button" class="btn btn-danger" id="borrar">Borrar</button>
+                        </div>
+                        <div class="modal fade" id="ventana1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-primary text-white">
+                                        <h4 class="modal-title">Información adicional</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="faltas_justificadas" class="form-label">Ingrese las
+                                                        faltas justificadas</label>
+                                                    <input type="text" value="0" id="faltas_justificadas" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="faltas_injustificadas" class="form-label">Ingrese las
+                                                        faltas injustificadas</label>
+                                                    <input type="text" value="0" id="faltas_injustificadas" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="licencia_con" class="form-label">Ingrese los dias de
+                                                        licencia con goce</label>
+                                                    <input type="text" value="0" id="licencia_con" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="licencia_sin" class="form-label">Ingrese los dias de
+                                                        licencia sin goce</label>
+                                                    <input type="text" value="0" id="licencia_sin" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="modal-title mb-3"><u>COMISIONES</u></h6>
+                                        <div class="row mb-3">
+                                            <div class="col">
+                                                <label for="comision_1" class="form-label">Mes 1</label>
+                                                <input type="text" id="comision_1" value="0" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for="comision_2" class="form-label">Mes 2</label>
+                                                <input type="text" id="comision_2" value="0" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for="comision_3" class="form-label">Mes 3</label>
+                                                <input type="text" id="comision_3" value="0" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col">
+                                                <label for="comision_4" class="form-label">Mes 4</label>
+                                                <input type="text" id="comision_4" value="0" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for="comision_5" class="form-label">Mes 5</label>
+                                                <input type="text" id="comision_5" value="0" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for="comision_6" class="form-label">Mes 6</label>
+                                                <input type="text" id="comision_6" value="0" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            data-dismiss="modal">Aceptar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="ventana2">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-primary text-white">
+                                        <h4 class="modal-title">Renumeración computable</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="resultado">
+                                            <label for="Renumeracion_basica">Renumeracion básica: S/</label>
+                                            <label id="Renumeracion_basica"></label>
+                                        </div>
+                                        <div class="resultado">
+                                            <label for="Asignacion_familiar">Asignación familiar: S/</label>
+                                            <label id="Asignacion_familiar"></label>
+                                        </div>
+                                        <div class="resultado">
+                                            <label for="Gratificacion">1/6 gratificación: S/</label>
+                                            <label id="Gratificacion"></label>
+                                        </div>
+                                        <div class="resultado">
+                                            <label id="Total_comisiones-">Promedio comisiones: S/</label>
+                                            <label id="Total_comisiones"></label>
+                                        </div>
+                                        <div class="resultado">
+                                            <label for="Renumeracion_computable">Total: S/</label>
+                                            <label id="Renumeracion_computable"></label>
+                                        </div>
+                                        <h6 class="modal-title mb-2 text-center"><u>CÁLCULO CTS</u></h6>
+                                        <div class="resultado">
+                                            <label id="Renumeracion_computable+"></label>
+                                            <label id="Dias"> / 360 * </label>
+                                            <label id="Total_dias"></label>
+                                            <label id="CTS"> = S/</label>
+                                            <label id="Total_CTS"></label>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            data-dismiss="modal">Aceptar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/algoritmo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
+</html>
