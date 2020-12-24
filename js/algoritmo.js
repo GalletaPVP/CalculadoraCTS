@@ -79,5 +79,21 @@ function calcular(){
     document.getElementById('Total_dias').innerText = trabajados;
     document.getElementById('Total_CTS').innerText = Total_CTS.toFixed(2);
 }
+function borrar(){
+    document.getElementById('renumeracion_basica').value = 0;
+    document.getElementById('asignacion_familiar').value = 0;
+    document.getElementById('gratificacion').value = 0;
+    document.getElementById('faltas_justificadas').value = 0;
+    document.getElementById('faltas_injustificadas').value = 0;
+    document.getElementById('licencia_con').value = 0;
+    document.getElementById('licencia_sin').value = 0;
+    document.getElementById('comision_1').value = 0;
+    document.getElementById('comision_2').value = 0;
+    document.getElementById('comision_3').value = 0;
+    document.getElementById('comision_4').value = 0;
+    document.getElementById('comision_5').value = 0;
+    document.getElementById('comision_6').value = 0;
+}
 document.getElementById('fecha_final').addEventListener('input', analizar)
 document.getElementById('calcular').addEventListener('click', calcular)
+document.getElementById('borrar').addEventListener('click', borrar)
